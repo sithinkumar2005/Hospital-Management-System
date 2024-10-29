@@ -1,0 +1,49 @@
+{% include 'base.html' %}
+{% include 'navbar.html' %}
+{% block content %}
+
+
+{% if error == "no" %}
+<script>
+    alert('Record saved successfully');
+    window.location="{% url 'appointment' %}";
+</script>
+{% endif %}
+
+{% if error == "yes" %}
+<script>
+    alert('Invalid, please try again');
+</script>
+{% endif %}
+
+<section class="s1">
+    <div class="container">
+        <h1 class="text-center">Add Appointment</h1><br>
+        <form method="post">
+            {% csrf_token %}
+            <label for="">Doctor Name</label>
+            <select name="doctor" class="form-control">
+                {% for i in Doctors %}
+                <option value="{{ i.name }}">{{ i.name }}</option>
+                {% endfor %}
+            </select>
+            <label for="">Patient Name</label>
+            <select name="patient" class="form-control">
+                {% for i in Patients %}
+                <option value="{{ i.name }}">{{ i.name }}</option>
+                {% endfor %}
+            </select>
+            <label for="">Disease</label>
+            <input type="text" class="form-control" name="disease"/>
+            <label for="">Date</label>
+            <input type="date" class="form-control" name="date"/>
+            <label for="">Time</label>
+            <input type="time" class="form-control" name="time"/>
+
+            <input type="submit" value="Submit" class="form-control btn btn-primary"/>
+        </form>
+    </div>
+</section>
+
+{% endblock content %}
+{% include 'footer.html' %}

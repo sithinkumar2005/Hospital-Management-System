@@ -1,0 +1,41 @@
+{% include 'base.html' %}
+{% include 'navbar.html' %}
+
+{% block content %}
+<div>
+
+  <body>
+  
+    <h1 class="text-center" >View Appointment</h1>
+    <br>
+  <table class="table">
+    <tr>
+        <th>Appointment id</th>
+        <th>Doctor Name</th>
+        <th>Patient Name</th>
+        <th>Disease</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Delete</th>
+    </tr>
+    {% for i in doc %}
+        <tr class="tr">
+            <td>{{i.id}}</td>
+            <td>{{i.Doctor.name}}</td>
+            <td>{{i.Patient.name}}</td>
+            <td>{{i.disease}}</td>
+            <td>{{i.date}}</td>
+            <td>{{i.time}}</td> 
+            <td>
+              <a href="/delete_appointment/{{ i.id }}" 
+              onclick="return confirm('Are you sure?')" 
+              class="btn btn-danger">
+              Delete
+           </a>
+            </td>     
+        </tr>
+    {% endfor %}
+</table>
+</div>
+{% endblock content %}
+{% include 'footer.html' %}

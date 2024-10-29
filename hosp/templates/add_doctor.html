@@ -1,0 +1,35 @@
+{% include 'base.html' %}
+{% include 'navbar.html' %}
+{% block content %}
+
+{% if error == "no" %}
+<script>
+    alert('Record saved successfully');
+    window.location="{% url 'doctor' %}";
+</script>
+{% endif %}
+
+{% if error == "yes" %}
+<script>
+    alert('Invalid, please try again');
+</script>
+{% endif %}
+
+<section class="s1">
+    <div class="container">
+        <h1 class="text-center">Add Doctor</h1><br>
+        <form method="post">
+            {% csrf_token %}
+            <label for="">Doctor Name</label>
+            <input type="text" class="form-control" name="name"/>
+            <label for="">Mobile</label>
+            <input type="number" class="form-control" name="mobile"/>
+            <label for="">special</label>
+            <input type="text" class="form-control" name="special"/>
+            <br>
+            <input type="submit" value="submit" class="form-control btn btn-primary"/>
+        </form>
+    </div>
+</section>
+{% endblock content %}
+{% include 'footer.html' %}

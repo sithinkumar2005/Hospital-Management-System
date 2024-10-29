@@ -1,0 +1,59 @@
+{% include 'base.html' %}
+{% include 'navbar.html' %}
+{% block content %}
+{% load static %}
+<style>
+    .inbox10 , .inbox11 , .inbox12 , .inbox13 , .inbox14{
+    margin-top: 25px;
+    /* margin-bottom: 25px; */
+    height: min-content;
+}
+</style>
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                <div class="inbox1">
+                    <h1>Who we are and <br>What we do</h1>
+                    <p>This is the world's leading portal for <br>easy and quick</p>
+                </div>
+            </div>
+        <div class="col-sm">
+            <div class="inbox2">
+                <h1>Hospital</h1><br>
+                <p>The hospital management system is a computer system that helps manage the information related to healthcare and aids in the job completion of healthcare providers effectively. They manage the data related to all departments of healthcare such as, Clinical Management.</p>
+                <p>___________________________________</p>
+                <p>It is the management that helps in managing the functioning of the hospital or a health unit. It integrates various departments of a health care unit, like clinical, non-clinical and supporting departments. Health care services must be comprehensive, preventive, curative and rehabilitative.</p>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+<section class="s7">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl col-lg-6 col-sm-6">
+                <div class="inbox10">
+                    <img src="{% static 'images/5.jpg' %}" alt="" class="w-100" >
+                </div>
+            </div>
+            <div class="col-xl col-lg-6 col-sm-6">
+                <div class="inbox11">
+                    <img src="{% static 'images/2.jpg' %}" alt="" class="w-100" >
+                </div>
+            </div>
+            <div class="col-xl col-lg-6 col-sm-6">
+                <div class="inbox12">
+                    <img src="{% static 'images/3.jpg' %}" alt="" class="w-100" >
+                </div>
+            </div>
+            <div class="col-xl col-lg-6 col-sm-6">
+                <div class="inbox13">
+                    <img src="{% static 'images/1.jpg' %}" alt="" class="w-100" >
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}
+{% include 'footer.html' %}

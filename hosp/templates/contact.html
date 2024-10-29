@@ -1,0 +1,39 @@
+{% include 'base.html' %}
+{% include 'navbar.html' %}
+<style>
+    .div12:hover{
+        box-shadow: 0 0 20px 0 rgb(0,0,0.3);
+        transform:translate y(-20px);
+    }
+    .notes{
+      color: black;
+      display: inline-block;
+      text-decoration: none;
+    }
+</style>
+
+{% block content %}
+<div class="container text-center" style="margin-top: 50px;"> 
+    <h1 class="text-center">Contact Us</h1>
+    <div class="row align-items-start mt-5 text-center">
+      <div class="col-lg-3 div12">
+        <h4><i class="bi bi-telephone-fill">Contact</i></h4>
+        <p class="text-danger font-weigth-bold mt-3"><a class="notes" href="+91 100-002-0345">+91 100-002-0345</a></p>
+      </div>
+      <div class="col-lg-3 div12">
+        <h4><i class="bi bi-envelope-fill">Send-email</i></h4>
+        <p class="font-weigth-bold mt-3"><a class="notes" href="hospital@gmail.com">Hospital@gmail.com</a></p>
+      </div>
+      <div class="col-lg-3 div12">
+        <h4><i class="bi bi-person-vcard-fill">Office Address</i></h4>
+        <p class="font-weigth-bold mt-3"><a class="notes" href="http://maps.google.com/maps?q=Kerala">Kerala</a></p>
+      </div>
+      <div class="col-lg-3 div12">
+        <h4><i class="bi bi-clock-fill">Office Time</i></h4>
+        <p class="font-weigth-bold mt-3">10AM to 7PM</p>
+      </div>
+    </div>
+  </div>
+{% endblock content %}
+{% include 'footer.html' %}
+ 

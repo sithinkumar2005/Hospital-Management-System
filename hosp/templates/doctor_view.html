@@ -1,0 +1,42 @@
+  {% include 'base.html' %}
+{% include 'navbar.html' %}
+<style>
+        tr:nth-child(even) {
+        background-color: #dddddd;
+
+      }
+</style>
+{% block content %}
+<div>
+
+      <body>
+      
+        <h1 class="text-center">View Doctor</h1>
+        <br>
+      <table class="table">
+        <tr>
+            <th>No</th>
+            <th>Name</th>
+            <th>Mobile</th>
+            <th>special</th>
+            <th>Delete</th>
+        </tr>
+        {% for i in doc %}
+            <tr>
+                <td>{{i.id}}</td>
+                <td>{{i.name}}</td>
+                <td>{{i.mobile}}</td>
+                <td>{{i.special}}</td>
+                <td>
+                    <a href="/delete_doctor/{{ i.id }}" 
+                       onclick="return confirm('Are you sure?')" 
+                       class="btn btn-danger">
+                       Delete
+                    </a>
+                </td>       
+            </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock content %}
+{% include 'footer.html' %}
